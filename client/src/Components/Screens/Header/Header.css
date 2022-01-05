@@ -1,0 +1,430 @@
+.promotionsLine {
+	padding: 4px 0;
+	background: rgb(248 10 111);
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	z-index: 11;
+	width: 100%;
+}
+
+.promotionText {
+	color: white;
+	font-family: "Montserrat";
+	letter-spacing: 0.4px;
+	font-size: small;
+}
+
+.promotionCloseBtn {
+	color: white;
+	font-family: "Montserrat";
+	position: absolute;
+	right: 10px;
+	top: 40%;
+	transform: translate(0, -50%);
+	font-size: large;
+	cursor: pointer;
+}
+
+.Header {
+	height: 70px;
+	width: 100%;
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	user-select: none;
+}
+
+.Header::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: lightgrey;
+	opacity: 0.2;
+	z-index: -1;
+	filter: blur(3px);
+}
+
+@keyframes topbottom {
+	from {
+		height: 0;
+	}
+
+	to {
+		height: 100%;
+	}
+}
+
+.Header .header__logo g:last-child {
+	fill: white;
+}
+
+.Header.white .header__logo g:last-child {
+	fill: rgb(65, 63, 63);
+}
+
+.Header.white::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: white;
+	z-index: -1;
+	animation: topbottom 0.2s;
+}
+
+.header__container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+	justify-content: space-between;
+}
+
+.Header .header__logo {
+	flex: 0.3;
+	z-index: 9;
+	padding: 5px 10px 0 10px;
+}
+
+.Header .header__logo-svg > svg {
+	width: 260px;
+}
+
+.Header .header__logo h1 {
+	position: relative;
+}
+
+nav {
+	flex: 0.6;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.header__user-nav {
+	height: 50px;
+	cursor: pointer;
+	margin-right: 20px;
+	border-radius: 40px;
+	padding: 0 5px 0 0;
+	font-family: "Josefin Slab", "Ubuntu", "Encode Sans SC", serif;
+	position: relative;
+}
+
+.header__user-nav-img {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+
+.header__user-nav-img .avatar__img {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.header__user-nav-img .text {
+	font-family: "Josefin Slab";
+	font-weight: 900;
+	letter-spacing: 1.3px;
+	margin-left: 15px;
+}
+
+.header__user-nav .avatar__arrow {
+	width: 15px;
+	margin-left: 10px;
+}
+
+.avatar__list {
+	background-color: #fff;
+	list-style: none;
+	margin-top: 20px;
+	position: relative;
+	animation: avatarlist 0.2s linear;
+}
+
+@keyframes avatarlist {
+	0% {
+		transform: translateY(-30px);
+	}
+
+	50% {
+		transform: translateY(-15px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.avatar__list::before {
+	content: "";
+	width: 30px;
+	position: absolute;
+	height: 30px;
+	right: 10px;
+	top: -10px;
+	background: #fff;
+	transform: rotate(45deg);
+	border-radius: 2px;
+	z-index: -1;
+}
+
+.avatar__list li {
+	padding: 15px 20px;
+	border-bottom: 1px solid #eee;
+	font-weight: 600;
+	color: black;
+	font-size: 15px;
+	transition: all 0.2s ease;
+	letter-spacing: 1px;
+}
+
+.avatar__list li:hover {
+	background: dodgerblue;
+	color: white;
+}
+
+.header__loginText {
+	margin: 0 15px;
+	display: flex;
+	justify-content: center;
+	letter-spacing: 2px;
+	align-items: center;
+}
+
+.header__cart {
+	display: flex;
+	padding: 8px 10px;
+	margin: 0 20px;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: black;
+	color: white;
+}
+
+.header__cart-subText {
+	font-size: 0.9rem;
+	margin-left: 2px;
+	font-family: "Josefin Slab", "Ubuntu", "Encode Sans SC", serif;
+}
+
+/* Header Side Navigation bar */
+
+.header__side-nav {
+	z-index: 11;
+	position: fixed;
+	width: 300px;
+	top: 0;
+	left: -100%;
+	height: 100vh;
+	background: rgb(224, 224, 224);
+	transition: 0.4s ease;
+}
+
+.header__side-nav__container {
+	margin: 80px 0;
+}
+
+.header__side-nav-upper-section {
+	position: relative;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.header__side-nav-upper-section-btns {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	padding: 10px 0;
+	border-bottom: 1px solid lightgray;
+}
+
+.header__side-nav-button {
+	cursor: pointer;
+	width: 45%;
+	padding: 10px 30px;
+	font-size: medium;
+	margin: 0 5px;
+	outline: none;
+	border: none;
+	min-width: 130px;
+	background: black;
+	letter-spacing: 1.4px;
+	color: white;
+	transition: background 0.2s linear;
+	font-family: "Josefin Slab";
+	font-weight: 600;
+}
+
+.header__side-nav-button:hover {
+	background: dodgerblue;
+	color: #fff;
+}
+
+.header__side-nav-main-section {
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	margin-top: 15px;
+	line-height: 2;
+}
+
+.header__side-nav-text {
+	position: relative;
+	margin: 0;
+	padding: 10px 15px;
+	border-bottom: 1px solid lightgray;
+	font-size: larger;
+	font-weight: 600;
+	letter-spacing: 0.6px;
+	cursor: pointer;
+	color: black;
+	transition: background 0.2s linear;
+}
+
+.header__side-nav-text-order {
+	font-size: larger;
+	font-weight: 700;
+	color: rgb(243, 93, 93);
+}
+
+.header__side-nav-text:hover {
+	background: dodgerblue;
+	color: white;
+}
+
+.header__mobile__cart-btn {
+	display: none;
+	width: 100%;
+	position: fixed;
+	bottom: -2px;
+	max-height: 70px;
+	transition: all 0.3s ease;
+}
+
+.header__mobile__cart-btn > button {
+	width: 100%;
+	padding: 15px;
+	background: #d70f64;
+	border: none;
+	outline: none;
+	font-size: 1.2rem;
+	letter-spacing: 2px;
+	font-weight: 600;
+}
+
+.header__mobile__cart-btn > button > a {
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header__mobile__cart-btn-length {
+	background: white;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	left: 80%;
+	top: 2px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.ShoppingBasketRoundedIcon {
+	margin-right: 20px;
+}
+
+@media only screen and (max-width: 860px) {
+	.header__login {
+		display: none;
+	}
+}
+@media only screen and (max-width: 650px) {
+	.header__mobile__cart-btn {
+		display: block;
+	}
+	.header__login {
+		display: none;
+	}
+	.header__user-nav {
+		display: block;
+		max-width: 50px;
+		background: brown;
+		margin: 0;
+		padding: 0;
+	}
+
+	.avatar__list {
+		min-width: 170px;
+		right: 125px;
+	}
+
+	.header__user-nav-img .avatar__img {
+		width: 50px;
+		height: 50px;
+	}
+
+	.header__user-nav-text {
+		display: none;
+	}
+
+	.avatar__arrow {
+		display: none;
+	}
+
+	.header__cart {
+		margin: 0;
+		display: none;
+	}
+
+	.header__logo {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		margin: 0 5px;
+		color: black;
+		font-family: "Hammersmith One", sans-serif;
+	}
+
+	nav {
+		flex: 0.1;
+		margin: 0;
+		max-width: 50px;
+		min-width: 50px;
+	}
+}
+
+@media only screen and (max-width: 440px) {
+	.Header .header__logo-svg > svg {
+		width: 230px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.Header .header__logo-svg > svg {
+		width: 200px;
+	}
+}
+
+@media only screen and (max-width: 370px) {
+	.Header .header__logo-svg > svg {
+		width: 170px;
+	}
+}

@@ -1,0 +1,286 @@
+.checkout {
+	padding: 30px 0;
+	width: 100%;
+	height: 100%;
+}
+
+.checkout input {
+	border: 1px solid darkgrey;
+}
+
+.errorShowPayment {
+	position: relative;
+	justify-content: center;
+	color: red;
+	font-weight: 600;
+	letter-spacing: 0.7px;
+	transition: all 0.3s ease-in;
+}
+
+.checkout__categories {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+}
+
+.checkout__category {
+	position: relative;
+	width: calc(100% - 20px);
+	display: flex;
+	padding: 0 10px 20px 10px;
+	margin-bottom: 30px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.checkout__category::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	width: 80%;
+	height: 100%;
+	bottom: 0;
+	transform: translate(-50%);
+	margin-top: 20px;
+	z-index: 10000;
+	border-bottom: 1px solid #ccc;
+	z-index: -1;
+}
+
+.checkout__category-title {
+	flex: 0.3;
+	min-width: 230px;
+	margin: 5px 0;
+}
+
+.checkout__category-title h2 {
+	letter-spacing: 1.3px;
+	font-size: larger;
+}
+
+.checkout__category-details {
+	min-width: 340px;
+	margin: 5px 0 5px 10px;
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.checkout__category-details.flexdircolumn {
+	flex-direction: column;
+}
+
+.checkout__form-group {
+	flex: 1 1 30%;
+	min-width: 270px;
+	display: flex;
+	flex-direction: column;
+}
+
+.checkout__category-details .checkout__form-group label {
+	margin: 0 10px 5px 10px;
+	font-size: medium;
+	letter-spacing: 1.2px;
+	font-weight: 600;
+	color: rgb(156, 156, 156);
+	display: flex;
+	justify-content: space-between;
+}
+
+.checkout__category-details .checkout__form-group .checkout__form-group-span {
+	font-size: small;
+	color: rgb(226, 5, 5);
+}
+
+.checkout__category-details .checkout__form-group input {
+	padding: 10px 10px;
+	margin: 0 10px;
+	border-radius: 7px;
+	outline: none;
+	font-size: medium;
+	font-weight: 600;
+	letter-spacing: 1px;
+	color: rgb(41, 40, 40);
+}
+
+.checkout__category-details input::placeholder {
+	color: #999;
+	letter-spacing: 1px;
+}
+
+.checkout__category-details > * {
+	margin: 5px 0;
+	width: 100%;
+}
+
+.checkout__category-or-btn {
+	text-align: center;
+	margin: 40px 0;
+	font-size: 2rem;
+	font-family: "Montserrat";
+}
+
+.checkout__takeaway-btn {
+	position: relative;
+	background: white;
+	font-size: 1.2rem;
+	color: black;
+	padding: 10px 20px;
+	width: 50%;
+	border: 2px solid lightgrey;
+	cursor: pointer;
+	transition: all 0.2s linear;
+	margin: 20px auto;
+	height: 50px;
+	border-radius: 15px;
+}
+
+.checkout__takeaway-btn.withimg {
+	height: 80px;
+}
+
+.checkout__takeaway-btn:hover {
+	background: #ddd;
+}
+
+.checkout__takeaway-btn * {
+	font-family: "Montserrat";
+}
+
+.checkout__takeaway-btn .labelnimage {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* radio button styling starts here */
+
+.checkout__takeaway-btn input {
+	position: absolute;
+	opacity: 0;
+	height: 0;
+	width: 0;
+}
+
+.checkout__checkmark {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 35px;
+	width: 35px;
+	margin: 0 6px;
+	background-color: #eee;
+	border-radius: 50%;
+	transform: translate(0, -50%);
+}
+
+.container:hover input ~ .checkmark {
+	background-color: #aaa;
+}
+
+.container input:checked ~ .checkmark {
+	background-color: #2196f3;
+}
+
+.checkout__checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+.checkout__takeaway-btn input:checked ~ .checkout__checkmark:after {
+	display: block;
+}
+
+.checkout__takeaway-btn .checkout__checkmark::after {
+	top: 50%;
+	left: 50%;
+	width: 23px;
+	height: 23px;
+	border-radius: 50%;
+	background: dodgerblue;
+	transform: translate(-50%, -50%);
+}
+
+.checkout__takeaway-btn label,
+.checkout__takeaway-btn img {
+	width: fit-content;
+	margin-left: 50px;
+	user-select: none;
+}
+/* radio button styling ends here */
+
+.checkout__category-details .checkout__payment-section {
+	width: 60%;
+}
+
+.checkout__total-error {
+	position: absolute;
+	right: 20px;
+	top: -20px;
+}
+
+.checkout__total-error > p {
+	color: red;
+	font-size: 12px;
+	font-weight: 500;
+	font-family: "Montserrat";
+}
+
+.checkout__payment-section-total {
+	margin-left: 20px;
+}
+
+.checkout__proceedToPay {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 50px;
+	border: none;
+}
+
+.checkout__proceedToPay-link {
+	color: white;
+	padding: 10px 20px;
+	background: dodgerblue;
+	min-width: 300px;
+	text-align: center;
+	font-family: "Montserrat";
+	font-size: medium;
+	transition: all 0.2s linear;
+	position: relative;
+}
+
+.checkout__proceedToPay-link:hover {
+	background: rgb(9, 93, 177);
+}
+
+.checkout__proceedToPay-link span {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translate(-15px, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* margin-left: 50px; */
+}
+
+@media only screen and (max-width: 600px) {
+	.checkout__category-details input {
+		font-size: small;
+	}
+
+	.checkout__takeaway-btn {
+		width: 70%;
+	}
+}
+@media only screen and (max-width: 520px) {
+	.checkout__category-details {
+		min-width: 300px;
+	}
+}

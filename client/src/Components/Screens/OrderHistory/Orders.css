@@ -1,0 +1,93 @@
+.order__history {
+	width: 100%;
+	height: 100%;
+	min-height: calc(100vh - 70px);
+	margin: 30px 0;
+}
+
+.order__history * {
+	font-family: "Montserrat";
+}
+
+.ordersHistory__front-boxes {
+	display: flex;
+	width: 100%;
+	min-height: 400px;
+	flex-wrap: wrap;
+	margin: 40px 0 50px 0;
+}
+
+.orders__box {
+	background: #f9ca3f;
+	flex: 1 1 30%;
+	margin: 0 5px;
+	min-width: 300px;
+	height: 60%;
+	min-height: 300px;
+	max-height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.orders__box-text {
+	color: white;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.orders__box-text-subText {
+	font-size: xx-large;
+	text-align: center;
+	padding: 10px;
+}
+
+/* .orders__completed-box {
+  background: #15ff00;
+	flex: 1 1 30%;
+	margin: 0 5px;
+	min-width: 300px;
+	height: 60%;
+	min-height: 300px;
+	max-height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} */
+
+.order__history-order-title {
+	margin: 40px auto;
+	width: 90%;
+}
+
+/* next section started  */
+.order__history-container {
+	margin: 0 auto 50px auto;
+	overflow-x: auto;
+	background: white;
+	width: 90%;
+	box-shadow: 8px 8px 25px 20px #ddd;
+	border-radius: 20px;
+	min-height: 400px;
+}
+
+.order__history-container > .manageOrders__box {
+	margin: 5px 20px;
+}
+
+@media only screen and (max-width: 700px) {
+	.order__history-container {
+		width: 98%;
+	}
+
+	.order__history-container > .manageOrders__box {
+		margin: 5px;
+	}
+}
+
+.order__history-notFound {
+	color: red;
+	margin: 30px;
+	letter-spacing: 1.2px;
+}

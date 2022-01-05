@@ -1,0 +1,12 @@
+.main__location-screen {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.main__location-section {
+  height: 60vh;
+  width: 90%;
+}

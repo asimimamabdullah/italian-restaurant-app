@@ -1,0 +1,34 @@
+.categories .category {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 50%;
+  margin: 10px 30px;
+  cursor: pointer;
+}
+
+.categories .category img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.15s linear;
+}
+
+.categories .category img:hover {
+  background: grey;
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+.categories__category-name {
+  margin-top: 20px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-size: large;
+  font-weight: 600;
+}
+
+.categories::-webkit-scrollbar {
+  width: 0;
+}

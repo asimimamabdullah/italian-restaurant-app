@@ -1,0 +1,90 @@
+.dashboard__main {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+/* Header Side Navigation bar */
+
+.headers__side-nav {
+  z-index: 1;
+  position: fixed;
+  width: 300px;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  background: rgb(224, 224, 224);
+  transition: 0.4s ease;
+  z-index: 2;
+}
+
+.headers__side-nav__container {
+  margin: 80px 0;
+}
+
+.headers__side-nav-upper-section {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.headers__side-nav-upper-section-btns {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 10px 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.headers__side-nav-button {
+  cursor: pointer;
+  width: 45%;
+  padding: 10px 30px;
+  font-size: medium;
+  margin: 0 5px;
+  outline: none;
+  border: none;
+  min-width: 130px;
+  background: black;
+  letter-spacing: 0.4px;
+  color: white;
+  transition: background 0.2s linear;
+}
+
+.headers__side-nav-button:hover {
+  background: dodgerblue;
+  color: black;
+}
+
+.headers__side-nav-main-section {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  line-height: 2;
+}
+
+.headers__side-nav-text {
+  position: relative;
+  margin: 0;
+  padding: 10px 15px;
+  border-bottom: 1px solid lightgray;
+  font-size: larger;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  color: black;
+  transition: background 0.2s linear;
+}
+
+.headers__side-nav-text-order {
+  font-size: larger;
+  font-weight: 700;
+}
+
+.headers__side-nav-text:hover {
+  background: dodgerblue;
+  color: white;
+}

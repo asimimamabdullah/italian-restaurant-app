@@ -1,0 +1,87 @@
+@font-face {
+	font-family: "Josefin Slab";
+	src: url("./Fonts/JosefinSlab-Regular.ttf");
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url("./Fonts/montserrat-v18-latin-regular.woff");
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+}
+
+.btn {
+	padding: 7px 15px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.btn-dark {
+	color: #ffffff;
+	background: rgb(0, 0, 0);
+}
+
+.btn-main {
+	font-size: xx-large;
+	font-weight: 700;
+}
+
+.btn-primary {
+	color: white;
+	background: dodgerblue;
+	outline: none;
+	border: none;
+}
+
+.btn-anim {
+	cursor: pointer;
+	transition: all 0.15s linear;
+}
+
+.btn-anim:hover {
+	background: rgb(45, 147, 250);
+	color: white;
+	transform: scale(1.06);
+}
+
+.footer__order-page-link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 5px;
+}
+
+.menu-to-menuscreen-arrow {
+	width: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background: rgb(250, 51, 134);
+	color: white;
+	height: 35px;
+	margin-left: 10px;
+	transition: all 0.2s linear;
+	cursor: pointer;
+}
+
+.menu-to-menuscreen-arrow:active {
+	transform: scale(0.9);
+}
+
+.menu-to-menuscreen-arrow:hover {
+	box-shadow: 0 0 5px 10px #ccc;
+}
+
+.socialLinksIcons {
+	transition: transform 0.2s linear;
+	cursor: pointer;
+}
+.socialLinksIcons:hover {
+	transform: scale(1.2);
+}

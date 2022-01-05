@@ -1,0 +1,62 @@
+.people-form {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 5px 0;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.reserve-seat__select select,
+.date-picker {
+	margin: 5px 0;
+	position: relative;
+	min-width: 200px;
+	background: white;
+	font-family: "Josefin Slab", "Ubuntu", "Encode Sans SC", serif;
+	font-weight: 900;
+	letter-spacing: 1.2px;
+	font-size: medium;
+	color: black;
+	outline: none;
+	border-width: none;
+	border: none;
+}
+
+.reserve-seat__select select {
+	padding: 10.8px 30px;
+}
+
+.date-picker {
+	padding: 8px 30px;
+}
+
+.reserveSeat__select-main:first-child {
+	border-radius: 6px 0 0 6px;
+}
+
+.reserveSeat__select-main:last-of-type {
+	border-radius: 0 6px 6px 0;
+}
+
+.reserve-seat__select select option {
+	font-weight: 600;
+	background: white;
+	font-size: medium;
+	color: black;
+}
+
+@media only screen and (max-width: 700px) {
+	.people-form {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.reserveSeat__select-main:first-child {
+		border-radius: 0;
+	}
+
+	.reserveSeat__select-main:last-of-type {
+		border-radius: 0;
+	}
+}

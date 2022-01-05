@@ -1,0 +1,24 @@
+.Items {
+  height: fit-content;
+  width: 100%;
+  margin: 70px 0;
+}
+
+.items__title {
+  padding: 0 20px;
+  letter-spacing: 1.5px;
+}
+
+.items__container {
+  margin-top: 15px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+  padding: 15px 0;
+  overflow-y: visible;
+}
+
+.items__container::-webkit-scrollbar {
+  width: 0;
+}

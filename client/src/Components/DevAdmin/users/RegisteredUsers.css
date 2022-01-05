@@ -1,0 +1,41 @@
+.registeredUsers {
+  position: relative;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.registeredUser__box {
+  cursor: default;
+  flex: 1;
+  margin: 10px;
+  display: flex;
+  height: fit-content;
+  padding: 10px 20px;
+  background-color: #ddd;
+  justify-content: space-between;
+}
+
+.registeredUser__flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.registeredUser__subText {
+  color: rgb(6, 150, 247);
+  letter-spacing: 1px;
+  font-family: "Montserrat";
+  margin-bottom: 7px;
+  text-transform: lowercase;
+  font-size: small;
+}
+
+.registeredUser__boldText {
+  margin-left: 10px;
+  margin-top: 7px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: "Montserrat";
+  font-size: 0.8rem;
+}

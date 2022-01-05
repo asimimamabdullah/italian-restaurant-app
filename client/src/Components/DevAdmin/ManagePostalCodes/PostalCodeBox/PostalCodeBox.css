@@ -1,0 +1,92 @@
+.postalCode__box {
+  margin: 10px auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #bbb;
+  background: #eee;
+  padding: 10px 20px;
+  border-radius: 45px;
+}
+
+.postalCode__box > div {
+  transition: all 0.4s linear;
+}
+
+.postalCode__box-sec {
+  flex: 1;
+  text-align: center;
+  margin: 5px 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.postalCode__box-status-sec {
+  flex: 1;
+  text-align: center;
+  margin: 5px 5px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.postalCode__box-btn-sec {
+  margin: 5px 30px;
+  padding: 0 10px;
+  display: flex;
+}
+
+.postalCode__box-btn-sec button {
+  padding: 8px 14px;
+  background-color: #ddd;
+  margin: 5px 0;
+  outline: none;
+  border: none;
+  font-size: medium;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.postalCode__box-btn-sec button:first-child {
+  border-radius: 20px 0 0 20px;
+}
+
+.postalCode__box-btn-sec button:last-child {
+  border-radius: 0 20px 20px 0;
+  background: rgb(252, 57, 57);
+  color: white;
+}
+
+.postalCode__box-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+}
+
+.postalCode__box-value {
+  font-size: 17px;
+  padding-left: 40px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.postalCode__box-btns {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+}
+
+.postalCode__box-btns-btn {
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+}
+
+.editIcon {
+  size: 50px;
+}

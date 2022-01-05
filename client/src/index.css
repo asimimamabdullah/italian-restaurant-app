@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Slab", "Ubuntu", "Encode Sans SC", serif;
+}
+
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background: #eee;
+  font-family: "Josefin Slab", "Ubuntu", "Encode Sans SC", serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.success__box {
+  padding: 10px 18px;
+  background: #5cf352;
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 99;
+  color: white;
+  transition: all 0.4s linear;
+  font-size: large;
+  min-width: 200px;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 2px;
+  animation: successbox 2s linear;
+}
+
+.error__box {
+  padding: 10px 18px;
+  background: rgb(247, 10, 10);
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 99;
+  color: white;
+  transition: all 0.4s linear;
+  font-size: large;
+  min-width: 200px;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 2px;
+  animation: successbox 2s linear;
+}
+
+@keyframes successbox {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

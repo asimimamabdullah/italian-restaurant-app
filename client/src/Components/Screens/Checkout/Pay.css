@@ -1,0 +1,42 @@
+.paymentOptions {
+	min-height: 100vh;
+}
+
+.paymentOptions .order__right-section {
+	position: static;
+	width: auto;
+	margin-top: 70px;
+}
+
+.paymentOptions .order__total-btns {
+	display: none;
+}
+
+.paymentOptions-Paypal-btn {
+	width: calc(100% - 20px);
+	padding: 10px;
+	text-align: center;
+}
+
+.paymentOptions-confirmOrder-btn {
+	padding: 10px 20px;
+	margin: 10px;
+	font-size: medium;
+	font-family: Montserrat;
+	border: none;
+	background: dodgerblue;
+	color: white;
+	cursor: pointer;
+	transition: all 0.2s linear;
+	min-width: 200px;
+	box-shadow: 1px 3px 5px grey;
+}
+
+.paymentOptions-confirmOrder-btn:hover {
+	box-shadow: 5px 7px 10px grey;
+	background: rgb(9, 93, 177);
+}
+
+.paymentOptions-confirmOrder-btn:active {
+	transform: translateY(3px);
+}

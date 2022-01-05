@@ -1,0 +1,114 @@
+.categories__screen {
+  display: flex;
+  margin: 15px;
+  justify-content: space-between;
+}
+.create__category {
+  position: relative;
+  max-width: 40%;
+  flex: 1 1 45%;
+}
+
+.create__category .form {
+  display: flex;
+  flex-direction: column;
+}
+
+.category__input-group {
+  display: flex;
+  margin: 5px 0;
+  flex-direction: column;
+}
+
+.category__input {
+  padding: 15px 15px;
+  margin: 5px;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.category__input::placeholder {
+  font-weight: 600;
+  font-family: "Montserrat";
+  letter-spacing: 1px;
+}
+
+/* ---------------- Image ---------------------- */
+
+.category__img {
+  flex: 1 1 30%;
+  min-width: 270px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.category__img input {
+  left: 50%;
+  transform: translate(-50%);
+  position: relative;
+
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+
+  background-position: center;
+  background-size: cover;
+}
+
+.category__img input::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-image: url("../../Images/avatar.png");
+  background-size: cover;
+  cursor: pointer;
+}
+
+.category__img img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  object-fit: cover;
+  object-position: center;
+}
+
+.category__form-clear-img {
+  padding: 5px 10px;
+  background: dodgerblue;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "Montserrat";
+}
+
+.category__submit-button {
+  font-size: larger;
+  letter-spacing: 0.5px;
+  background: dodgerblue;
+  cursor: pointer;
+  color: white;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  font-family: "Montserrat";
+  width: 40%;
+  margin: 30px auto;
+}
+
+.category__submit-button:hover {
+  background-color: rgb(20, 129, 238);
+}

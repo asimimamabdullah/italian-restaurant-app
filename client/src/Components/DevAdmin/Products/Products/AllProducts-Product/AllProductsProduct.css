@@ -1,0 +1,106 @@
+.allproducts__product {
+  margin: 2px;
+  flex: 1 1 30%;
+  min-width: calc(270px / 1.08);
+  position: relative;
+  top: 0;
+}
+
+.allproducts__items {
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  margin: 10px 20px;
+  box-shadow: 1px 5px 10px lightgray;
+}
+
+.allproducts__items__image {
+  flex: 0.6;
+  object-fit: cover;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.allproducts__items__image:hover {
+  transform: scale(1.04);
+}
+
+.allproducts__items__text {
+  flex: 0.4;
+  z-index: 1;
+  padding: 10px;
+  line-height: 1.2;
+}
+
+.allproducts__items__title {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.allproducts__items__description {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  font-family: "Montserrat";
+  color: grey;
+}
+
+.allproducts__items__price-rating {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.allproducts__items__price {
+  font-size: x-large;
+  font-weight: 700;
+}
+
+.allproducts__items__button {
+  display: flex;
+  padding: 5px 8px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  align-items: center;
+  justify-content: center;
+}
+
+.allproducts__items__button button {
+  font-size: 13px;
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  letter-spacing: 0.8px;
+}
+
+.allproducts__items__button button:hover {
+  background: dodgerblue;
+  border: 1px solid dodgerblue;
+  color: white;
+}
+
+.allproducts__edit-delete {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.allproducts__edit-delete button {
+  border: none;
+  outline: none;
+  color: white;
+  background: dodgerblue;
+  padding: 5px;
+  margin: 2px;
+  cursor: pointer;
+}
