@@ -1,12 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./ItemProduct.css";
-import { useNavigate, Link } from "react-router-dom";
 
 const ItemProduct = ({ title, description, price, images }) => {
-  const navigate = useNavigate()
   return (
     <Link to="/order" className="item__main">
-      <div className="item" onClick={() => navigate('/order')}>
+      <div className="item">
         <img
           src={
             images.url && images.url.endsWith("webp")
