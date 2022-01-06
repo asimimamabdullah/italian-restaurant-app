@@ -53,7 +53,7 @@ const ReserveSeat = () => {
   return (
     <div className="reserve-seat">
       {error && <div className="error__box">{error}</div>}
-      <h1 className="reserve-seat__title">Reserve Your Table now</h1>
+      <h1 className="reserve-seat__title">Prenota Ora il tuo Tavolo</h1>
 
       <div className="reserve-seat__image"></div>
 
@@ -78,7 +78,7 @@ const ReserveSeat = () => {
               typeof="time"
               onChange={changed}
               name="time">
-              <option value="0">Select Time</option>
+              <option value="0">seleziona l'ora</option>
               <option value="3:00 PM">3:00 PM</option>
               <option value="3:30 PM">3:30 PM</option>
               <option value="4:00 PM">4:00 PM</option>
@@ -129,9 +129,9 @@ const ReserveSeat = () => {
             <button
               type="submit"
               className=""
-              // style={{ background: "rgb(250, 51, 134)" }}>
+            // style={{ background: "rgb(250, 51, 134)" }}>
             >
-              Submit
+              Invia
             </button>
           </div>
         </form>

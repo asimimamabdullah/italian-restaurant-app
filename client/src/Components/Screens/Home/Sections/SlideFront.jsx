@@ -72,25 +72,23 @@ const SlideFront = () => {
         className="sliderFront__sidebox"
         style={{ display: postalCode ? "flex" : "none", flexDirection: 'column' }}>
         <div className="sliderFront__sidebox-line">
-          <EuroRoundedIcon /> <span>Delivery Price: {data?.deliveryPrice}</span>
+          <EuroRoundedIcon /> <span>Prezzo di Consegna: {data?.deliveryPrice}</span>
         </div>
         <div className="sliderFront__sidebox-line">
           <DeliveryDiningRoundedIcon />
-          <span>Delivery: {data?.estimatedTime} minutes</span>
+          <span>Consegna: {data?.estimatedTime} minutes</span>
         </div>
         <div className="sliderFront__sidebox-line">
           <ScheduleRoundedIcon /> <span>11:00 AM - 10:00 PM</span>
         </div>
         <div className="sliderFront__sidebox-line">
           <AirlineSeatReclineNormalRoundedIcon />
-          <span>Takeaway: 30 minutes</span>
+          <span>Porta Via: 30 minutes</span>
         </div>
 
-        {/* <Link to="/order" className="sliderFront__sidebox-btn"> */}
-        <button className="sliderFront__order-btn" onClick={e => navigate('/order')} >
-          Order Now!
+        <button className="sliderFront__order-btn" onClick={() => navigate('/order')} >
+          Ordina Adesso!
         </button>
-        {/* </Link> */}
       </div>
 
       <div
@@ -126,17 +124,17 @@ const SlideFront = () => {
       <div
         className="home__address-field"
         style={{ display: postalCode ? "flex" : "none" }}>
-        <h1 className="slider__title">The Food You Love</h1>
+        <h1 className="slider__title">Il Cibo Che Ami</h1>
 
         <div className="home__location-buttons">
           <Link to="/order" className="home__location-buttons-link">
             <button className="home__location-buttons-button">
-              Order Now!
+              Ordina Adesso!
             </button>
           </Link>
           <Link to="/menu" className="home__location-buttons-link">
             <button className="home__location-buttons-button">
-              Visit Menu!
+              Visita il Menu!
             </button>
           </Link>
         </div>

@@ -273,14 +273,14 @@ const Header = ({ dashboard }) => {
                 onClick={removeSideNav}
                 to="/order"
                 className="header__side-nav-text header__side-nav-text-order">
-                <span>Order Now !</span>
+                <span>Ordina Adesso!</span>
               </Link>
 
               <Link
                 onClick={removeSideNav}
                 to="/findorder"
                 className="header__side-nav-text">
-                <span>Find your Order</span>
+                <span>Trova il Tuo Ordine</span>
               </Link>
 
               {isLoggedIn && (
@@ -296,7 +296,7 @@ const Header = ({ dashboard }) => {
                 to="find-us"
                 className="header__side-nav-text"
                 onClick={removeSideNav}>
-                <span>Location</span>
+                <span>Posizione</span>
               </Link>
 
               <Link

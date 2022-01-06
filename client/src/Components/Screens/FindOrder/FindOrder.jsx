@@ -33,7 +33,7 @@ const FindOrder = () => {
 
         <div className="findOrder__container">
           <h3 className='findOrder__container-findOrder'>
-            Find Your Order by Order Number
+            Trova il tuo Ordine per Numero d'ordine
           </h3>
           <form className="findOrder__search-box" onSubmit={findOrder}>
             <input

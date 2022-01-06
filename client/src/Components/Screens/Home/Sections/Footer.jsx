@@ -18,11 +18,13 @@ const Footer = () => {
 
         <div className="footer__container">
           <div className="footer__column">
-            <h2 className="footer__column-title">Discover</h2>
+            <h2 className="footer__column-title">Scoprire</h2>
             <Link to="/about" className="footer__column-subText">
-              <span>About Us</span>
+              <span>Chi Siamo</span>
             </Link>
-            <span className="footer__column-subText">Reserve Table</span>
+            <span className="footer__column-subText">
+              Tavolo di Riserva
+            </span>
             <span className="footer__column-subText">
               <a href="https://www.facebook.com/shahiristorante">
                 <img
@@ -55,7 +57,7 @@ const Footer = () => {
           </div>
 
           <div className="footer__column">
-            <h3 className="footer__column-title">Let Us know You</h3>
+            <h3 className="footer__column-title">Facci sapere te</h3>
             <Link to="/login" className="footer__column-subText">
               <span>Login</span>
             </Link>
@@ -65,7 +67,7 @@ const Footer = () => {
           </div>
 
           <div className="footer__column">
-            <h3 className="footer__column-title">More</h3>
+            <h3 className="footer__column-title">Di più</h3>
             <span className="footer__column-subText">
               Our Android App
             </span>

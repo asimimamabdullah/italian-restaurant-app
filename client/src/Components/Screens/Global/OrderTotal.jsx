@@ -63,19 +63,17 @@ const OrderTotal = () => {
             <span
               className="order__total-list-text"
               style={{ fontSize: "small", fontWeight: "bold" }}>
-              delivery fee
+              tassa di consegna
             </span>
             {data?.deliveryPrice}
           </p>
         </div>
         <h3 className="order__total">
-          <span> Total </span>
+          <span> Totale </span>
           {parseFloat(getBasketTotal(basket)).toFixed(2)} €
         </h3>
         {deliveryOption === "takeaway" ? null : data?.deliveryPrice ? (
-          <h4
-            className="order__total-fee-text"
-          >
+          <h4 className="order__total-fee-text">
             with delivery fee{" "}
             <span>
               {(
@@ -91,7 +89,7 @@ const OrderTotal = () => {
           <button
             className="order__total-empty-button"
             onClick={emptyBasket}>
-            Empty Cart
+            Carrello Vuoto
           </button>
           <Link
             to={basket.length > 0 ? "/checkout" : "/order"}
@@ -99,7 +97,8 @@ const OrderTotal = () => {
             <button
               className="order__total-checkout-button"
               onClick={checkoutClick}>
-              Checkout
+
+              Pagina di Pagamento
             </button>
           </Link>
         </div>

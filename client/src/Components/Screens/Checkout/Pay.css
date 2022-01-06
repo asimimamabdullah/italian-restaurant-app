@@ -2,6 +2,23 @@
 	min-height: 100vh;
 }
 
+.paymentOptions__front-text {
+	margin: 30px;
+	max-width: 240px;
+}
+
+.paymentOptions__front-text > a {
+	font-size: medium;
+	font-weight: bold;
+	font-family: "Montserrat";
+	background: dodgerblue;
+	color: white;
+	padding: 10px 15px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
 .paymentOptions .order__right-section {
 	position: static;
 	width: auto;

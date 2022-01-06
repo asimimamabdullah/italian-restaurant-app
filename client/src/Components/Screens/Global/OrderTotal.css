@@ -30,7 +30,7 @@
 
 .order__total-list > * {
 	margin: 0;
-	flex: 0.2 1 40%;
+	flex: 0.3 1 40%;
 }
 
 .order__total-title {
@@ -42,7 +42,7 @@
 
 .order__total-price {
 	font-size: 1.4rem;
-	letter-spacing: 0.7px;
+	letter-spacing: 0.3px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -86,11 +86,11 @@
 
 .order__total-checkout-button,
 .order__total-empty-button {
-	padding: 10px 20px;
+	padding: 10px 0px;
 	border: none;
 	outline: none;
 	color: white;
-	font-size: 1.1rem;
+	font-size: 0.9rem;
 	width: 100%;
 	cursor: pointer;
 	font-family: "Montserrat";

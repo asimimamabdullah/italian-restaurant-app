@@ -11,7 +11,7 @@ const Categories = () => {
   return (
     <>
       <div className="Categories">
-        <h1 className="category__title">Food Categories</h1>
+        <h1 className="category__title">Categorie Di Cibo</h1>
         <div className="categories">
           {categories?.map((cat, i) => (
             <Category {...cat} key={i} />

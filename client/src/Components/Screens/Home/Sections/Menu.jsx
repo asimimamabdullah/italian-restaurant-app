@@ -25,7 +25,7 @@ const Menu = () => {
         ))}
         <div className="footer__order-page-link">
           <p className="footer__order-page-link-text">
-            Click Here to See full menu
+            Clicca qui per vedere il menu completo
           </p>
           <Link className="menu-to-menuscreen-arrow" to="/menu">
             <ArrowForwardRoundedIcon />

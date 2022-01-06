@@ -5,8 +5,8 @@ import "./Checkout.css";
 import { useStateValue } from "../../../StateProvider";
 import CartProduct from "../Cart/Sections/CartProduct";
 import { getBasketTotal } from "../../../reducer";
-import CashOnDelivery from '../../Images/icons8-euro-64.png'
-import Paypal from '../../Images/paypal.png'
+import CashOnDelivery from "../../Images/icons8-euro-64.png";
+import Paypal from "../../Images/paypal.png";
 
 const Checkout = () => {
   const state = useStateValue();
@@ -21,11 +21,10 @@ const Checkout = () => {
   const [data] = userAPI.postalData;
   const [takeaway, setTakeaway] = userAPI.takeaway;
   const [homedelivery, setHomedelivery] = userAPI.homedelivery;
-  const [cashOnDelivery, setCashOnDelivery] = userAPI.cashOnDelivery
-  const [paypalDelivery, setPaypalDelivery] = userAPI.paypalDelivery
-  const [paymentOption, setPaymentOption] = userAPI.paymentOption
-  const [deliveryOption, setDeliveryOption] = userAPI.deliveryOption
-
+  const [cashOnDelivery, setCashOnDelivery] = userAPI.cashOnDelivery;
+  const [paypalDelivery, setPaypalDelivery] = userAPI.paypalDelivery;
+  const [paymentOption, setPaymentOption] = userAPI.paymentOption;
+  const [deliveryOption, setDeliveryOption] = userAPI.deliveryOption;
 
   const [error, setError] = useState("");
   const [deferLoading, setDeferLoading] = useState(true);
@@ -71,16 +70,24 @@ const Checkout = () => {
     ) {
       setDeferLoading(false);
     }
-
-  }, [building, basket, address, deferLoading, checkName, checkEmail, checkPhone, data?.minOrder, takeaway, postalCode, data]);
+  }, [
+    building,
+    basket,
+    address,
+    deferLoading,
+    checkName,
+    checkEmail,
+    checkPhone,
+    data?.minOrder,
+    takeaway,
+    postalCode,
+    data,
+  ]);
 
   useEffect(() => {
-    if ((!data || !postalCode) && deliveryOption === 'homedelivery') setError("Please Enter right Postal code");
-
-  }, [data, deliveryOption, postalCode])
-
-
-
+    if ((!data || !postalCode) && deliveryOption === "homedelivery")
+      setError("Please Enter right Postal code");
+  }, [data, deliveryOption, postalCode]);
 
   return (
     <div className="checkout">
@@ -91,13 +98,13 @@ const Checkout = () => {
         style={{
           display: deferLoading ? "flex" : "none",
         }}>
-        <p>* Please fill the Complete details to proceed payment </p>
+        <p>* Si prega di compilare i dettagli completi per procedere al pagamento </p>
       </div>
       <form>
         <div className="checkout__categories">
           <div className="checkout__category">
             <div className="checkout__category-title">
-              <h2>Delivery Address</h2>
+              <h2>Indirizzo di Consegna</h2>
             </div>
             <div className="checkout__category-details flexdircolumn">
               <label className="checkout__takeaway-btn">
@@ -109,28 +116,30 @@ const Checkout = () => {
                   checked={homedelivery}
                   onChange={(e) => {
                     if (e.target.checked) {
-                      setDeliveryOption(e.target.value)
+                      setDeliveryOption(e.target.value);
                       setHomedelivery(e.target.checked);
                       setTakeaway(false);
                     }
                   }}
                 />
                 <span className="checkout__checkmark"></span>
-                <label htmlFor="homedelivery">Home Delivery</label>
+                <label htmlFor="homedelivery">
+                  Consegna a Domicilio
+                </label>
               </label>
               <div
                 style={{ display: homedelivery ? "flex" : "none" }}
                 className="checkout__category-details">
                 <div className="checkout__form-group">
                   <label htmlFor="address">
-                    Address
+                    Indirizzo
                     <span
                       className="checkout__form-group-span"
                       style={{
                         display:
                           address?.length === 0 ? "block" : "none",
                       }}>
-                      Enter Address*
+                      inserisci l'indirizzo*
                     </span>
                   </label>
 
@@ -146,7 +155,7 @@ const Checkout = () => {
 
                 <div className="checkout__form-group">
                   <label htmlFor="building">
-                    Enter Building name or Apartment, floor
+                    Inserisci il nome dell'edificio o l'appartamento, piano
                     <span
                       className="checkout__form-group-span"
                       style={{
@@ -155,7 +164,7 @@ const Checkout = () => {
                             ? "block"
                             : "none",
                       }}>
-                      Enter Building, floor*
+                      Entra nell'edificio, piano*
                     </span>
                   </label>
                   <input
@@ -272,13 +281,13 @@ const Checkout = () => {
                   value="takeaway"
                   checked={takeaway}
                   onChange={(e) => {
-                    setDeliveryOption(e.target.value)
+                    setDeliveryOption(e.target.value);
                     setTakeaway(e.target.checked);
                     setHomedelivery(false);
                   }}
                 />
                 <span className="checkout__checkmark"></span>
-                <label htmlFor="takeaway">Take Away</label>
+                <label htmlFor="takeaway">Porta Via</label>
               </label>
 
               <div
@@ -359,7 +368,7 @@ const Checkout = () => {
 
           <div className="checkout__category">
             <div className="checkout__category-title">
-              <h2>Review Items and Delivery</h2>
+              <h2>Rivedi gli articoli e la Consegna</h2>
             </div>
 
             <div className="checkout__category-details">
@@ -371,13 +380,13 @@ const Checkout = () => {
 
           <div className="checkout__category">
             <div className="checkout__category-title">
-              <h2>Payment Methods</h2>
+              <h2>Modalità di pagamento</h2>
             </div>
 
             <div className="checkout__category-details">
-
-
-              <label className="checkout__takeaway-btn" style={{ height: '80px' }}>
+              <label
+                className="checkout__takeaway-btn"
+                style={{ height: "80px" }}>
                 <input
                   type="radio"
                   name="paypaldelivery"
@@ -385,20 +394,19 @@ const Checkout = () => {
                   value="paypaldelivery"
                   checked={paypalDelivery}
                   onChange={(e) => {
-                    setPaymentOption(e.target.value)
-                    setPaypalDelivery(e.target.checked)
-                    setCashOnDelivery(false)
+                    setPaymentOption(e.target.value);
+                    setPaypalDelivery(e.target.checked);
+                    setCashOnDelivery(false);
                   }}
                 />
                 <span className="checkout__checkmark"></span>
-                <div className="labelnimage" >
-
+                <div className="labelnimage">
                   <label htmlFor="paypaldelivery">Paypal</label>
-                  <img src={Paypal} alt="" width='50' height='50' />
+                  <img src={Paypal} alt="" width="50" height="50" />
                 </div>
               </label>
 
-              <label className="checkout__takeaway-btn withimg" >
+              <label className="checkout__takeaway-btn withimg">
                 <input
                   type="radio"
                   name="paymentOption"
@@ -406,36 +414,54 @@ const Checkout = () => {
                   value="cashondelivery"
                   checked={cashOnDelivery}
                   onChange={(e) => {
-                    setPaymentOption(e.target.value)
-                    setCashOnDelivery(e.target.checked)
-                    setPaypalDelivery(false)
+                    setPaymentOption(e.target.value);
+                    setCashOnDelivery(e.target.checked);
+                    setPaypalDelivery(false);
                   }}
                 />
                 <span className="checkout__checkmark"></span>
                 <div className="labelnimage">
-
-                  <label htmlFor="cashondelivery">Cash on Delivery</label>
-                  <img src={CashOnDelivery} alt="" width='64' height='64' />
+                  <label htmlFor="cashondelivery">
+                    Pagamento Alla Consegna
+                  </label>
+                  <img
+                    src={CashOnDelivery}
+                    alt=""
+                    width="64"
+                    height="64"
+                  />
                 </div>
               </label>
 
-
-
               <div className="checkout__payment-section">
                 <h2>
-                  Total
+                  Totale
                   <span className="checkout__payment-section-total"></span>
                   {parseFloat(getBasketTotal(basket))?.toFixed(2)} €
                 </h2>
               </div>
             </div>
 
-            <div style={{
-              display: parseFloat(getBasketTotal(basket)) >=
-                parseInt(deliveryOption === 'takeaway' ? '10' : deliveryOption === 'homedelivery' && data?.minOrder ? data?.minOrder : '10') ? 'none' : 'block'
-            }}
-              className='checkout__total-error'>
-              <p>*Order should be minimum of {deliveryOption === 'takeaway' ? '10' : data?.minOrder}</p>
+            <div
+              style={{
+                display:
+                  parseFloat(getBasketTotal(basket)) >=
+                    parseInt(
+                      deliveryOption === "takeaway"
+                        ? "10"
+                        : deliveryOption === "homedelivery" &&
+                          data?.minOrder
+                          ? data?.minOrder
+                          : "10"
+                    )
+                    ? "none"
+                    : "block",
+              }}
+              className="checkout__total-error">
+              <p style={{ fontFamily: 'Montserrat' }}>
+                *L'ordine deve essere minimo di{" "}
+                {deliveryOption === "takeaway" ? "10" : data?.minOrder}
+              </p>
             </div>
           </div>
 
@@ -448,11 +474,16 @@ const Checkout = () => {
               to={
                 !deferLoading &&
                   parseFloat(getBasketTotal(basket))?.toFixed(2) >=
-                  parseInt(deliveryOption === 'takeaway' ? '10' : data?.minOrder) && paymentOption
+                  parseInt(
+                    deliveryOption === "takeaway"
+                      ? "10"
+                      : data?.minOrder
+                  ) &&
+                  paymentOption
                   ? "/checkout/paymentoptions"
                   : "/checkout"
               }>
-              Proceed To Final Step
+              Procedi al Passaggio Finale
               <span>
                 <ArrowForwardIosIcon />
               </span>

@@ -16,23 +16,23 @@ const About = () => {
       <div className="about">
         <div className="about__frontImg">
           <div className="about__frontImg-text">
-            <h1>Get your favourite extra delicious food or Book table now!</h1>
+            <h1>Prendi il Tuo Cibo extra Delizioso Preferito o Prenota Subito un Tavolo!</h1>
           </div>
         </div>
         <div className="about__content">
           <br />
           <h3>
-            If you want to immerse yourself in new and particular flavors,
-            choose our Shahì restaurant in Soliera, in the province of Modena.
-            We specialize in offering the best specialties of Indian and
-            Pakistani cuisine based on rice, meat, vegetables, spices and
-            legumes, but not only.
+            Se vuoi immergerti in sapori nuovi e particolari,
+            scegli il nostro ristorante Shahì a Soliera, in provincia di Modena.
+            Siamo specializzati nell'offrire le migliori specialità indiane e
+            La cucina pakistana è a base di riso, carne, verdure, spezie e
+            legumi, ma non solo.
             <br />
             <br />
-            We are also a pizzeria with a menu full of classic and original
-            proposals, filled with always fresh ingredients of Emilian
-            preference. Contact us to book a table or to request our take-away
-            or home delivery ethnic cuisine.
+            Siamo anche una pizzeria con un menù ricco di classici e originali
+            proposte, farcite con ingredienti emiliani sempre freschi
+            preferenza. Contattaci per prenotare un tavolo o per richiedere il nostro take-away
+            o consegna a domicilio cucina etnica.
           </h3>
         </div>
 

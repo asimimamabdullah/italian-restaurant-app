@@ -67,10 +67,10 @@ const Login = () => {
           />
         </div>
         <span className="login__register">
-          Not a user? <Link to="/register"> Register here</Link>
+          Non un utente? <Link to="/register"> Registrati qui</Link>
         </span>
         <button type="submit" className="login__submit-button login__input">
-          Submit
+          Invia
         </button>
 
         <span className="forgot-password">

@@ -11,7 +11,7 @@ const Items = () => {
   return (
     <>
       <div className="Items">
-        <h1 className="items__title">Enjoy Your Meal Now!</h1>
+        <h1 className="items__title">Buon appetito ora!</h1>
 
         <div className="items__container">
           {products?.map((p, i) => (

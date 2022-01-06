@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from 'react-router-dom'
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import "./Pay.css";
 import Paypal from "./Paypal/Paypal";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import OrderTotal from "./../Global/OrderTotal";
 import { useStateValue } from "../../../StateProvider";
@@ -263,12 +265,20 @@ const Pay = () => {
     <>
       <div className="paymentOptions">
         {error && <div className="error__box">{error}</div>}
+
+        <div className="paymentOptions__front-text">
+          <Link to='/checkout'>
+            <ArrowBackRoundedIcon />Change Address Info
+          </Link>
+        </div>
+
+
         <OrderTotal />
 
         <div className="paymentOptions-Paypal-btn">
           {paymentOption === "paypaldelivery" ? (
             <>
-              <button
+              {/* <button
                 onClick={(e) =>
                   deliveryOption === "homedelivery"
                     ? transactionSuccess(
@@ -281,7 +291,7 @@ const Pay = () => {
                 }
                 style={{ padding: "10px 15px", margin: "10px" }}>
                 Pay the bill
-              </button>
+              </button> */}
               <Paypal
                 total={
                   deliveryOption === "takeaway"

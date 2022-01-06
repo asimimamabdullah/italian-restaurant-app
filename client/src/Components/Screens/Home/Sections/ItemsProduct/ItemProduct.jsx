@@ -28,7 +28,7 @@ const ItemProduct = ({ title, description, price, images }) => {
           <div className="item__price-rating">
             <span className="item__price">€ {price && price}</span>
             <span className="item__button">
-              <button className="">Order Now!</button>
+              <button className="">Ordina Adesso!</button>
             </span>
           </div>
         </div>
