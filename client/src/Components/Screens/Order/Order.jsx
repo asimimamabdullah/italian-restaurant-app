@@ -27,7 +27,7 @@ const Order = () => {
     if (params.categoryName) scrollToElement(params?.categoryName);
   }, [params?.categoryName]);
 
-  document.addEventListener("scroll", (e) => {
+  document.addEventListener("scroll", () => {
     const banner = document.querySelector(".order__banner");
     const header = document.querySelector(".order__header");
 

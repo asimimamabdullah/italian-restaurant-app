@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./Header.css";
 import { Outlet } from "react-router-dom";
-import Logo from "./Logo";
-import ShoppingBasketRoundedIcon from "@mui/icons-material/ShoppingBasketRounded";
-
 import { Link } from "react-router-dom";
+import ShoppingBasketRoundedIcon from "@mui/icons-material/ShoppingBasketRounded";
+import Logo from "./Logo";
+
 import { useStateValue } from "../../../StateProvider";
 import axios from "axios";
 
@@ -24,6 +24,7 @@ const Header = ({ dashboard }) => {
   const [y, setY] = useState(window.scrollY);
   const [displayMobileCartButton, setDisplayMobileCartButton] = useState(true);
   const [promotion, setPromotion] = useState(false);
+
 
   const handleNavigation = useCallback(
     (e) => {
@@ -48,7 +49,7 @@ const Header = ({ dashboard }) => {
   }, [handleNavigation]);
 
   useEffect(() => {
-    document.addEventListener("scroll", (e) => {
+    document.addEventListener("scroll", () => {
       const header = document.querySelector(".Header");
 
       if (header && window.scrollY > 5) {

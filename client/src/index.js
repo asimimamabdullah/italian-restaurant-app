@@ -5,10 +5,10 @@ import "./index.css";
 import { StateProvider } from "./StateProvider";
 
 ReactDOM.render(
-  <StateProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </StateProvider>,
-  document.getElementById("root")
+	<StateProvider>
+		<React.StrictMode>
+			<App />
+		</React.StrictMode>
+	</StateProvider>,
+	document.getElementById("root")
 );

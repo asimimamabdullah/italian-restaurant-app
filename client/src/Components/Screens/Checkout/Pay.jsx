@@ -278,7 +278,7 @@ const Pay = () => {
         <div className="paymentOptions-Paypal-btn">
           {paymentOption === "paypaldelivery" ? (
             <>
-              {/* <button
+              <button
                 onClick={(e) =>
                   deliveryOption === "homedelivery"
                     ? transactionSuccess(
@@ -291,7 +291,7 @@ const Pay = () => {
                 }
                 style={{ padding: "10px 15px", margin: "10px" }}>
                 Pay the bill
-              </button> */}
+              </button>
               <Paypal
                 total={
                   deliveryOption === "takeaway"

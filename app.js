@@ -40,7 +40,7 @@ app.use(cookieParser());
 app.use(
 	fileUpload({
 		useTempFiles: true,
-	})
+	}),
 );
 app.use(compression());
 
@@ -54,6 +54,10 @@ app.use("/api", require("./routes/users"));
 app.use("/api", require("./routes/PostalCode"));
 app.use("/api", require("./routes/reports"));
 app.use("/api", require("./routes/findOrder"));
+
+app.get("/privacy-policy", (req, res) => {
+	res.sendFile(__dirname + "/privacy_policy/privacy_policy.html");
+});
 
 app.use(express.static("client/build"));
 // if (process.env.NODE_ENV === "production") {
