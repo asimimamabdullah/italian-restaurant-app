@@ -95,13 +95,13 @@ userSchema.methods.matchPasswords = async function (password) {
 
 userSchema.methods.getAccessToken = async function () {
 	return jwt.sign({ id: this._id }, process.env.access_token_secret, {
-		expiresIn: "11min",
+		expiresIn: "7d",
 	});
 };
 
 userSchema.methods.getRefreshToken = async function () {
 	return jwt.sign({ id: this._id }, process.env.refresh_token_secret, {
-		expiresIn: "7d",
+		expiresIn: "1d",
 	});
 };
 

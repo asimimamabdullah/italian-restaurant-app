@@ -48,7 +48,7 @@ exports.login = async (req, res, next) => {
 
 	if (!email || !password)
 		return next(
-			new ErrorResponse("Please provide an email and password", 400)
+			new ErrorResponse("Please provide an email and password", 400),
 		);
 
 	try {
@@ -113,7 +113,7 @@ exports.resetPassword = async (req, res, next) => {
 
 		if (!user)
 			return next(
-				new ErrorResponse("No user found with the given token", 404)
+				new ErrorResponse("No user found with the given token", 404),
 			);
 
 		user.password = password;
@@ -224,7 +224,7 @@ exports.updateOrder = async (req, res, next) => {
 		const order = await Order.findOneAndUpdate(
 			{ orderNumber },
 			{ orderStatus: req.body.orderStatus },
-			{ new: true }
+			{ new: true },
 		);
 
 		return res.status(200).json({ success: "true", data: order });
