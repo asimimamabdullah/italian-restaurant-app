@@ -33,6 +33,6 @@ router.route("/forgotpassword").post(forgotPassword);
 
 router.route("/resetpassword/:resetToken").put(resetPassword);
 
-router.route("/rtfat").get(refreshToken);
+router.route("/rtfat").get(protect, refreshToken);
 
 module.exports = router;
