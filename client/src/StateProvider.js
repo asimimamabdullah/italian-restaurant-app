@@ -15,11 +15,17 @@ export const StateProvider = ({ children }) => {
 
 	useEffect(() => {
 		const firstLogin = localStorage.getItem("login");
+		const accessToken = localStorage.getItem("refreshToken");
 		if (firstLogin) {
 			const refreshToken = async () => {
 				try {
-					const res = await axios.get("/api/user/rtfat");
+					const auth = {
+						headers: { Authorization: `Bearer ${accessToken}` },
+					};
+
+					const res = await axios.get("/api/user/rtfat", auth);
 					setToken(res.data.accessToken);
+					localStorage.setItem("refreshToken", res.data.accessToken);
 
 					setTimeout(() => {
 						refreshToken();
@@ -27,6 +33,7 @@ export const StateProvider = ({ children }) => {
 				} catch (err) {
 					alert("Please Login again");
 					localStorage.removeItem("login");
+					localStorage.removeItem("refreshToken");
 				}
 			};
 			refreshToken();
