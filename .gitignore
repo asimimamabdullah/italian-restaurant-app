@@ -11,6 +11,7 @@ README.md
 
 # production
 /build
+*/build
 
 npm-debug.log
 .DS_Store
