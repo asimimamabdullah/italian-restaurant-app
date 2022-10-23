@@ -21,7 +21,8 @@ const Menu = () => {
 						<ul className="menu__category-list">
 							{products
 								?.filter((item) => item.category === cat.name)
-								.map((item, index) => (
+								.slice(0, 5)
+								?.map((item, index) => (
 									<li key={index}>{item.title}</li>
 								))}
 						</ul>

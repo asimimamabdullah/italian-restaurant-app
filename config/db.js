@@ -2,14 +2,14 @@ const mongoose = require("mongoose");
 // const pusher = require("../config/pusher");
 
 const connectDB = async () => {
-  await mongoose.connect(process.env.mongo_uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  });
+	mongoose.connect(process.env.mongo_uri, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true,
+		useFindAndModify: false,
+	});
 
-  console.log("Database connected");
+	console.log("Database connected");
 };
 
 // const db = mongoose.connection;
