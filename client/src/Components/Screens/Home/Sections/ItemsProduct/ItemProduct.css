@@ -1,6 +1,7 @@
 .item__main {
 	text-decoration: none;
 	color: black;
+	background: #eeeeee40;
 }
 .item {
 	height: 300px;
@@ -63,6 +64,7 @@
 .item__price {
 	font-size: x-large;
 	font-weight: 700;
+	font-family: "Montserrat";
 }
 
 .item__button {
@@ -79,11 +81,12 @@
 	border: 1px solid rgb(248, 10, 111);
 	outline: none;
 	font-weight: 600;
-	transition: all 0.2s linear;
 	cursor: pointer;
-	letter-spacing: 0.8px;
+	letter-spacing: 0.5px;
 	background: rgb(248, 10, 111);
 	color: white;
+	font-family: "Montserrat";
+	transition: all 0.2s linear;
 }
 
 .item__button button:hover {

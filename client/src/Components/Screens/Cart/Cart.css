@@ -11,12 +11,19 @@
 	width: 70%;
 	background: #fff;
 	justify-content: center;
+	min-height: calc(100vh - 70px);
 }
 
 .cart__container > * {
 	min-width: 230px;
 	margin: 10px 20px;
 	flex: 1 1 40%;
+}
+
+.cart__container .cart-empty-text {
+	color: red;
+	margin-left: 40px;
+	font-family: "Montserrat";
 }
 
 @media only screen and (max-width: 1244px) {
