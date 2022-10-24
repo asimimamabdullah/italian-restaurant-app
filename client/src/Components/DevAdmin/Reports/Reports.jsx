@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import jsPDF from "jspdf";
 import axios from "axios";
 import "./Reports.css";
@@ -22,7 +22,7 @@ const Reports = () => {
 		});
 	};
 
-	const getReport = async () => {
+	const getReport = useCallback(async () => {
 		if (month !== 0) {
 			try {
 				const report = await axios.get(`/api/dashboard/reports/${month}`, {
@@ -38,11 +38,11 @@ const Reports = () => {
 				setError(error.response.data.error);
 			}
 		}
-	};
+	}, [month, token]);
 
 	useEffect(() => {
 		getReport();
-	}, [month]);
+	}, [getReport]);
 
 	if (error) {
 		setTimeout(() => {

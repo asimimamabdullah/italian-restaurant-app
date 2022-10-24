@@ -44,7 +44,6 @@
 	bottom: 0;
 	transform: translate(-50%);
 	margin-top: 20px;
-	z-index: 10000;
 	border-bottom: 1px solid #ccc;
 	z-index: -1;
 }

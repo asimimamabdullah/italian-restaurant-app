@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import * as PusherPushNotifications from "@pusher/push-notifications-web";
 import "./App.css";
 import Header from "./Screens/Header/Header";
@@ -7,7 +7,8 @@ import Loading from "./Screens/Global/Loading";
 import { useStateValue } from "../StateProvider";
 import Home from "./Screens/Home/Home";
 import ScrollToTop from "./Screens/Global/ScrollToTop";
-
+import DisableScreen from "./Screens/Global/DisableScreen";
+import Dashboard from "./DevAdmin/Dashboard/Dashboard";
 const FoundOrder = lazy(() => import("./Screens/FindOrder/FoundOrder"));
 const OrderSucces = lazy(() => import("./Screens/Checkout/OrderSuccess"));
 const NotFound = lazy(() => import("./Screens/Global/NotFound"));
@@ -17,7 +18,6 @@ const AllProductsHeader = lazy(() =>
 );
 const Pay = lazy(() => import("./Screens/Checkout/Pay"));
 const RegisteredUsers = lazy(() => import("./DevAdmin/users/RegisteredUsers"));
-const Dashboard = lazy(() => import("./DevAdmin/Dashboard/Dashboard"));
 const Location = lazy(() => import("./Screens/Location/Location"));
 const Order = lazy(() => import("./Screens/Order/Order"));
 const Cart = lazy(() => import("./Screens/Cart/Cart"));
@@ -53,6 +53,7 @@ function App() {
 	const { userAPI } = useStateValue();
 	const [isAdmin] = userAPI.isAdmin;
 	const { userID } = userAPI;
+	const [headerOpened, setHeaderOpened] = useState(false);
 
 	useEffect(() => {
 		if (isAdmin) {
@@ -82,7 +83,16 @@ function App() {
 		<Router>
 			<div className="App">
 				<Routes>
-					<Route path="/" element={<Header />}>
+					<Route
+						path="/"
+						element={
+							<>
+								<Header setHeaderOpened={setHeaderOpened} />
+								{headerOpened && (
+									<DisableScreen setHeaderOpened={setHeaderOpened} />
+								)}
+							</>
+						}>
 						<Route
 							index
 							element={
@@ -270,9 +280,14 @@ function App() {
 						<Route
 							path="/dashboard"
 							element={
-								<Suspense fallback={<Loading />}>
-									<Dashboard />
-								</Suspense>
+								<>
+									<Dashboard setHeaderOpened={setHeaderOpened} />
+									{headerOpened && (
+										<DisableScreen
+											setHeaderOpened={setHeaderOpened}
+										/>
+									)}
+								</>
 							}>
 							<Route
 								index
