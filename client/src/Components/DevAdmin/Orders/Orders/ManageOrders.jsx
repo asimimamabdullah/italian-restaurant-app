@@ -16,7 +16,7 @@ const ManageOrders = () => {
 	const [deliveredOrders, setDeliveredOrders] = useState([]);
 	const [totalAmount, setTotalAmount] = useState(0);
 
-	const totalEarning = () => {
+	const totalEarning = useCallback(() => {
 		setTotalAmount(0);
 		orders?.forEach((item) => {
 			if (item.orderStatus === "delivered") {
@@ -27,11 +27,11 @@ const ManageOrders = () => {
 				}
 			}
 		});
-	};
+	}, [orders]);
 
 	useEffect(() => {
 		totalEarning();
-	}, [orders]);
+	}, [orders, totalEarning]);
 
 	const getOrders = useCallback(async () => {
 		try {
