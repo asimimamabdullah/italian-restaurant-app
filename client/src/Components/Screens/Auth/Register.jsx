@@ -63,7 +63,6 @@ const Register = () => {
 				return res;
 			} catch (error) {
 				setLoading(false);
-				console.log("error occured", error.response.data.error);
 				setError(error.response.data.error);
 			}
 		};

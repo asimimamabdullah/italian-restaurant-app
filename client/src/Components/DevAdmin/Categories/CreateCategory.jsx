@@ -185,7 +185,6 @@ const CreateCategory = () => {
 					},
 				);
 			}
-			// console.log("delete Image ran: and data ", res);
 		} catch (err) {
 			console.log("delete category image error: ", err.response.data);
 		}

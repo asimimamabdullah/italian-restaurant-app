@@ -31,7 +31,6 @@ const Reports = () => {
 					},
 				});
 				setArray(report.data.array);
-				console.log("report: ", report.data.array);
 				setShowContent(true);
 				return report;
 			} catch (error) {

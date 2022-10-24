@@ -71,7 +71,6 @@ const UserAPI = (token) => {
 				}
 			})
 			.catch((error) => {
-				console.log("something wrong here: ", error.response);
 				localStorage.removeItem("pcl");
 				setData(null);
 				setMinimumOrder(null);

@@ -42,7 +42,6 @@ const ManageOrders = () => {
 			const orderr = await axios.get("/api/user/allorders", auth);
 
 			setOrders(orderr.data.orders.reverse());
-			console.log("orders: ", orderr.data.orders);
 
 			return orderr;
 		} catch (error) {
