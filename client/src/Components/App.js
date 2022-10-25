@@ -13,9 +13,7 @@ const FoundOrder = lazy(() => import("./Screens/FindOrder/FoundOrder"));
 const OrderSucces = lazy(() => import("./Screens/Checkout/OrderSuccess"));
 const NotFound = lazy(() => import("./Screens/Global/NotFound"));
 const Login = lazy(() => import("./Screens/Auth/Login"));
-const AllProductsHeader = lazy(() =>
-	import("./DevAdmin/Products/AllProductsHeader/AllProductsHeader"),
-);
+const AllProductsHeader = lazy(() => import("./DevAdmin/Products/AllProductsHeader/AllProductsHeader"));
 const Pay = lazy(() => import("./Screens/Checkout/Pay"));
 const RegisteredUsers = lazy(() => import("./DevAdmin/users/RegisteredUsers"));
 const Location = lazy(() => import("./Screens/Location/Location"));
@@ -25,29 +23,19 @@ const About = lazy(() => import("./Screens/About/About"));
 const Orders = lazy(() => import("./Screens/OrderHistory/Orders"));
 const Checkout = lazy(() => import("./Screens/Checkout/Checkout"));
 const Settings = lazy(() => import("./Screens/Settings/Settings"));
-const CreateCategory = lazy(() =>
-	import("./DevAdmin/Categories/CreateCategory"),
-);
+const CreateCategory = lazy(() => import("./DevAdmin/Categories/CreateCategory"));
 const FindOrder = lazy(() => import("./Screens/FindOrder/FindOrder"));
 
 const MenuScreen = lazy(() => import("./Screens/Menu/MenuScreen"));
 const CreateProduct = lazy(() => import("./DevAdmin/Products/CreateProduct"));
 const Register = lazy(() => import("./Screens/Auth/Register"));
-const AllProducts = lazy(() =>
-	import("./DevAdmin/Products/Products/AllProducts"),
-);
-const PostalCodes = lazy(() =>
-	import("./DevAdmin/ManagePostalCodes/PostalCodes"),
-);
-const ManageOrders = lazy(() =>
-	import("./DevAdmin/Orders/Orders/ManageOrders"),
-);
+const AllProducts = lazy(() => import("./DevAdmin/Products/Products/AllProducts"));
+const PostalCodes = lazy(() => import("./DevAdmin/ManagePostalCodes/PostalCodes"));
+const ManageOrders = lazy(() => import("./DevAdmin/Orders/Orders/ManageOrders"));
 const DashboardHome = lazy(() => import("./DevAdmin/Dashboard/Home/Home"));
 const Reports = lazy(() => import("./DevAdmin/Reports/Reports"));
 const OrderInfo = lazy(() => import("./DevAdmin/Orders/OrderInfo/OrderInfo"));
-const EditProduct = lazy(() =>
-	import("./DevAdmin/Products/EditProduct/EditProduct"),
-);
+const EditProduct = lazy(() => import("./DevAdmin/Products/EditProduct/EditProduct"));
 
 function App() {
 	const { userAPI } = useStateValue();
@@ -64,12 +52,8 @@ function App() {
 			try {
 				beamsClient
 					.start()
-					.then(() =>
-						beamsClient.addDeviceInterest(`hello_${userID && userID}`),
-					)
-					.then(() =>
-						console.log("Successfully registered and subscribed!"),
-					)
+					.then(() => beamsClient.addDeviceInterest(`hello_${userID && userID}`))
+					.then(() => console.log("Successfully registered and subscribed!"))
 					.catch((err) => {
 						Notification.requestPermission();
 						console.log("error: ", err);
@@ -88,9 +72,7 @@ function App() {
 						element={
 							<>
 								<Header setHeaderOpened={setHeaderOpened} />
-								{headerOpened && (
-									<DisableScreen setHeaderOpened={setHeaderOpened} />
-								)}
+								{headerOpened && <DisableScreen setHeaderOpened={setHeaderOpened} />}
 							</>
 						}>
 						<Route
@@ -282,11 +264,7 @@ function App() {
 							element={
 								<>
 									<Dashboard setHeaderOpened={setHeaderOpened} />
-									{headerOpened && (
-										<DisableScreen
-											setHeaderOpened={setHeaderOpened}
-										/>
-									)}
+									{headerOpened && <DisableScreen setHeaderOpened={setHeaderOpened} />}
 								</>
 							}>
 							<Route
