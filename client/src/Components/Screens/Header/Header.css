@@ -76,7 +76,7 @@
 	right: 0;
 	bottom: 0;
 	background: white;
-	z-index: -1;
+	z-index: -2;
 	animation: topbottom 0.2s;
 }
 
@@ -90,7 +90,6 @@
 
 .Header .header__logo {
 	flex: 0.3;
-	z-index: 9;
 	padding: 5px 10px 0 10px;
 }
 
@@ -99,6 +98,7 @@
 }
 
 .Header .header__logo h1 {
+	z-index: 9;
 	position: relative;
 }
 
@@ -232,7 +232,7 @@ nav {
 	height: 100vh;
 	min-height: max-content;
 	background: #eee;
-	transition: 0.3s ease-in;
+	transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 .header__side-nav__container {
