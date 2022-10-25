@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../CreateProduct.css";
-
 import { useNavigate, useParams } from "react-router-dom";
 import { useStateValue } from "./../../../../StateProvider";
 import Loading from "./../../../Screens/Global/Loading";
@@ -16,8 +15,8 @@ const EditProduct = () => {
 	const [callback, setCallback] = productsAPI.callback;
 	const [products] = productsAPI.products;
 
-	const [imageUpload, setImageUpload] = useState(false);
-	const [imageShow, setImageShow] = useState(null);
+	// const [imageUpload, setImageUpload] = useState(false);
+	// const [imageShow, setImageShow] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 
@@ -36,11 +35,11 @@ const EditProduct = () => {
 
 		let formData = new FormData();
 		formData.append("file", getFile);
-		setImageUpload(formData);
+		// setImageUpload(formData);
 		const reader = new FileReader();
 
 		reader.onloadend = () => {
-			setImageShow(reader.result);
+			// setImageShow(reader.result);
 		};
 
 		reader.readAsDataURL(getFile);
@@ -56,8 +55,8 @@ const EditProduct = () => {
 	};
 
 	const cancelImage = () => {
-		setImageShow(null);
-		setImageUpload(false);
+		// setImageShow(null);
+		// setImageUpload(false);
 		setData((prevValues) => ({ ...prevValues, images: null }));
 	};
 
@@ -133,9 +132,7 @@ const EditProduct = () => {
 								style={{ objectFit: "cover" }}
 							/>
 
-							<div
-								className="create__product-cancel-image"
-								onClick={cancelImage}>
+							<div className="create__product-cancel-image" onClick={cancelImage}>
 								X
 							</div>
 						</div>
@@ -186,11 +183,7 @@ const EditProduct = () => {
 						/>
 					</div>
 					<div className="create__product-input">
-						<select
-							name="category"
-							onChange={handleChange}
-							defaultValue={products[index].category}
-							required>
+						<select name="category" onChange={handleChange} defaultValue={products[index].category} required>
 							<option value="Category" disabled>
 								Select Category
 							</option>

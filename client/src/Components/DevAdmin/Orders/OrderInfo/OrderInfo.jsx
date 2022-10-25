@@ -31,12 +31,9 @@ const OrderInfo = () => {
 		setLoading(true);
 
 		try {
-			const data = await axios.patch(
-				`/api/user/updateorder/${orderNumber}`,
-				{
-					orderStatus: e.target.value,
-				},
-			);
+			const data = await axios.patch(`/api/user/updateorder/${orderNumber}`, {
+				orderStatus: e.target.value,
+			});
 
 			setOrderStatus(data?.data.data?.orderStatus);
 			setSuccess("Order has been updated");
@@ -50,7 +47,7 @@ const OrderInfo = () => {
 
 	useEffect(() => {
 		getOrder();
-	}, []);
+	}, [getOrder]);
 
 	if (error || success) {
 		setTimeout(() => {
@@ -102,9 +99,7 @@ const OrderInfo = () => {
 								<div className="foundOrder__page-customerInfo-text">
 									<p>
 										<b>Name</b>:{" "}
-										{`${order?.name ? order?.name : ""} ${
-											order?.lastName ? order?.lastName : ""
-										}`}
+										{`${order?.name ? order?.name : ""} ${order?.lastName ? order?.lastName : ""}`}
 									</p>
 									<p>
 										<b>Email</b>: {order?.email}
@@ -154,17 +149,13 @@ const OrderInfo = () => {
 
 								{order?.deliveryOption === "homedelivery" ? (
 									<p className="foundOrder__page-delivery">
-										Delivery Fee:{" "}
-										<span>{order?.deliveryCharges} €</span>
+										Delivery Fee: <span>{order?.deliveryCharges} €</span>
 									</p>
 								) : null}
 								<h3 className="foundOrder__page-total">
 									Total:{" "}
 									<span>
-										{order?.deliveryCharges
-											? order?.total + order?.deliveryCharges
-											: order?.total}{" "}
-										€
+										{order?.deliveryCharges ? order?.total + order?.deliveryCharges : order?.total} €
 									</span>
 								</h3>
 
@@ -174,18 +165,12 @@ const OrderInfo = () => {
 									</p>
 									<p>
 										Payment Method: "
-										<b>
-											{order?.paymentOption === "paypaldelivery"
-												? "paypal"
-												: "cashondelivery"}
-										</b>
-										"
+										<b>{order?.paymentOption === "paypaldelivery" ? "paypal" : "cashondelivery"}</b>"
 									</p>
 								</div>
 
 								<p className="inconvenience-msg">
-									For any kind of inconvenience or issue. Please call
-									on this number: <b>+39 059 3968633</b>
+									For any kind of inconvenience or issue. Please call on this number: <b>+39 059 3968633</b>
 								</p>
 							</div>
 						</>
