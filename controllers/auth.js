@@ -8,22 +8,11 @@ const PostalCode = require("../models/PostalCode");
 
 let beamsClient = new PushNotifications({
 	instanceId: "8f9950c1-3405-4dfd-a3a1-48254faff0a3",
-	secretKey:
-		"7F0291D5E3BBDB90C5F120A937FB3FEC08DDCF080316172C7DE8DA6E03ADBAF7",
+	secretKey: "7F0291D5E3BBDB90C5F120A937FB3FEC08DDCF080316172C7DE8DA6E03ADBAF7",
 });
 
 exports.register = async (req, res, next) => {
-	const {
-		firstName,
-		lastName,
-		email,
-		password,
-		address,
-		building,
-		postalCode,
-		city,
-		images,
-	} = req.body;
+	const { firstName, lastName, email, password, address, building, postalCode, city } = req.body;
 
 	try {
 		const user = await User.create({
@@ -35,7 +24,7 @@ exports.register = async (req, res, next) => {
 			building,
 			postalCode,
 			city,
-			images,
+			phone,
 		});
 		sendToken(user, 201, res);
 	} catch (error) {
@@ -46,10 +35,7 @@ exports.register = async (req, res, next) => {
 exports.login = async (req, res, next) => {
 	const { email, password } = req.body;
 
-	if (!email || !password)
-		return next(
-			new ErrorResponse("Please provide an email and password", 400),
-		);
+	if (!email || !password) return next(new ErrorResponse("Please provide an email and password", 400));
 
 	try {
 		const user = await User.findOne({ email }).select("+password");
@@ -57,7 +43,6 @@ exports.login = async (req, res, next) => {
 		if (!user) {
 			return next(new ErrorResponse("Invalid Credentials", 404));
 		}
-
 		const isMatch = await user.matchPasswords(password);
 
 		if (!isMatch) return next(new ErrorResponse("Wrong Password", 401));
@@ -101,20 +86,14 @@ exports.resetPassword = async (req, res, next) => {
 	if (!password) return next(new ErrorResponse("Please Provide a password"));
 
 	try {
-		const resetPasswordToken = crypto
-			.createHash("sha256")
-			.update(resetToken)
-			.digest("hex");
+		const resetPasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex");
 
 		const user = await User.findOne({
 			resetPasswordToken,
 			resetPasswordExpire: { $gt: Date.now() },
 		});
 
-		if (!user)
-			return next(
-				new ErrorResponse("No user found with the given token", 404),
-			);
+		if (!user) return next(new ErrorResponse("No user found with the given token", 404));
 
 		user.password = password;
 		user.resetPasswordToken = undefined;
@@ -137,8 +116,7 @@ exports.refreshToken = async (req, res, next) => {
 	const rtfat = req.cookies.rtfat;
 
 	try {
-		if (!rtfat)
-			res.status(400).json({ success: true, error: "Not Found Token" });
+		if (!rtfat) res.status(400).json({ success: true, error: "Not Found Token" });
 
 		const decode = jwt.verify(rtfat, process.env.refresh_token_secret);
 
@@ -221,11 +199,7 @@ exports.updateOrder = async (req, res, next) => {
 		const { orderStatus } = req.body;
 		const { orderNumber } = req.params;
 
-		const order = await Order.findOneAndUpdate(
-			{ orderNumber },
-			{ orderStatus: req.body.orderStatus },
-			{ new: true },
-		);
+		const order = await Order.findOneAndUpdate({ orderNumber }, { orderStatus: req.body.orderStatus }, { new: true });
 
 		return res.status(200).json({ success: "true", data: order });
 	} catch (error) {

@@ -20,28 +20,10 @@ const Register = () => {
 		address: "",
 		building: "",
 		city: "",
+		phone: "",
 	});
-
-	const [fileImage, setFileImage] = useState(null);
-	const [imageUpload, setImageUpload] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
-
-	const handleFileChange = (e) => {
-		const getFile = e.target.files[0];
-		if (!getFile) return alert("File Doesn't exist");
-
-		let formData = new FormData();
-		formData.append("file", getFile);
-		setImageUpload(formData);
-
-		const reader = new FileReader();
-
-		reader.readAsDataURL(getFile);
-		reader.onloadend = () => {
-			setFileImage(reader.result);
-		};
-	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -52,58 +34,18 @@ const Register = () => {
 			return;
 		}
 
-		const upload = async () => {
-			try {
-				const res = await axios.post("/api/upload", imageUpload, {
-					headers: {
-						"Content-Type": "multipart/form-data",
-					},
-				});
-
-				return res;
-			} catch (error) {
-				setLoading(false);
-				setError(error.response.data.error);
-			}
-		};
-
-		const register = async (d) => {
-			try {
-				if (d) {
-					const response = await axios.post("/api/user/register", {
-						...registerForm,
-						images: { public_id: d.data.public_id, url: d.data.url },
-					});
-
-					setLoading(false);
-					setToken(response.data.accessToken);
-				}
-
-				if (!d) {
-					const response = await axios.post("/api/user/register", {
-						...registerForm,
-					});
-					setLoading(false);
-					setToken(response.data.accessToken);
-				}
-
-				localStorage.setItem("login", true);
-				window.location.href = "/";
-			} catch (err) {
-				setLoading(false);
-				setError(err.response.data.error);
-			}
-		};
-
 		try {
-			if (fileImage) {
-				upload().then(register);
-			}
-			if (!fileImage) {
-				register();
-			}
+			const response = await axios.post("/api/user/register", {
+				...registerForm,
+			});
+			setLoading(false);
+			setToken(response.data.accessToken);
+
+			localStorage.setItem("login", true);
+			window.location.href = "/";
 		} catch (err) {
 			setLoading(false);
+			setError(err.response.data.error);
 		}
 	};
 
@@ -113,11 +55,6 @@ const Register = () => {
 			...prevValues,
 			[name]: value,
 		}));
-	};
-
-	const clearImage = () => {
-		setImageUpload(null);
-		setFileImage(null);
 	};
 
 	if (error) {
@@ -134,42 +71,8 @@ const Register = () => {
 			{error && <div className="error__box">{error}</div>}
 			<form className="form" onSubmit={handleSubmit}>
 				<div className="register__form">
-					<div className="register__img">
-						<h3
-							style={{
-								letterSpacing: "1.3px",
-								padding: "10px 20px",
-								userSelect: "none",
-							}}>
-							Choose Profile
-						</h3>
-						{!fileImage && (
-							<input
-								type="file"
-								className="register__img-input"
-								onChange={handleFileChange}
-							/>
-						)}
-						{fileImage && (
-							<img
-								style={{ userSelect: "none" }}
-								src={fileImage}
-								alt=""
-							/>
-						)}
-						{fileImage && (
-							<span
-								className="register__form-clear-img"
-								onClick={clearImage}>
-								Clear Image
-							</span>
-						)}
-					</div>
-
 					<div className="register__user">
-						<h3 style={{ letterSpacing: "1.3px", userSelect: "none" }}>
-							Please Provide Your Info
-						</h3>
+						<h3 className="register__user-title">Please Provide Your Info</h3>
 
 						<div className="register__input-group">
 							<input
@@ -230,9 +133,19 @@ const Register = () => {
 					</div>
 
 					<div className="register__address">
-						<h3 style={{ letterSpacing: "1.3px", userSelect: "none" }}>
-							Provide Address
-						</h3>
+						<h3 className="register__address-title">Provide Address</h3>
+
+						<div className="register__input-group">
+							<input
+								type="text"
+								name="phone"
+								placeholder="Phone no."
+								className="register__input"
+								value={registerForm.phone}
+								required
+								onChange={handleInputChange}
+							/>
+						</div>
 
 						<div className="register__input-group">
 							<input
@@ -268,11 +181,7 @@ const Register = () => {
 						</div>
 
 						<div className="register__input-group">
-							<select
-								defaultValue="City"
-								name="city"
-								className="register__input"
-								onChange={handleInputChange}>
+							<select defaultValue="City" name="city" className="register__input" onChange={handleInputChange}>
 								<option value="City" disabled>
 									Select City
 								</option>
