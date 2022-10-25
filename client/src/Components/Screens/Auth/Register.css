@@ -7,6 +7,7 @@
 
 .register .form {
 	display: flex;
+	justify-content: center;
 	flex-direction: column;
 	padding: 10px 60px;
 }
@@ -21,7 +22,7 @@
 /* --------------- Center Section User Info ------------- */
 
 .register__user {
-	flex: 1 1 30%;
+	flex: 1 1 45%;
 	padding: 10px;
 	border-right: 1px dashed rgb(190, 188, 188);
 	min-width: 270px;
@@ -60,7 +61,7 @@
 /* ----------------------- Right Addess Section ---------------------- */
 
 .register__address {
-	flex: 1 1 30%;
+	flex: 1 1 45%;
 	min-width: 270px;
 	margin: 20px 0;
 	padding: 10px;
@@ -121,7 +122,15 @@ option {
 }
 
 @media only screen and (max-width: 620px) {
+	.register .form {
+		padding: 10px 5px;
+	}
+
 	.register__user {
 		border-right: none;
+	}
+
+	.register__submit-button {
+		width: 80%;
 	}
 }
