@@ -6,7 +6,7 @@
 	bottom: 0;
 	left: 300px;
 	right: 0;
-	z-index: 22;
+	z-index: 50;
 	animation: fadeIn ease 0.4s;
 }
 
