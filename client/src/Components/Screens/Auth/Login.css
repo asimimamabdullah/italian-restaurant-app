@@ -11,6 +11,7 @@
 }
 .login__container {
 	width: 30%;
+	transform: translateY(-70px);
 }
 .login-title {
 	margin: 15px;
@@ -51,9 +52,10 @@
 	outline: none;
 	border: 1px solid lightgray;
 	border-radius: 5px;
-	font-size: small;
+	font-size: medium;
 	font-weight: 900;
 	letter-spacing: 1.5px;
+	font-family: "Montserrat";
 }
 
 .login__input::placeholder {
@@ -124,10 +126,17 @@
 		margin: 40px auto;
 		width: 80%;
 	}
+
+	.login__input {
+		font-size: small;
+	}
 }
 
 @media only screen and (max-width: 430px) {
 	.login__container {
 		width: 96%;
+	}
+	.login__input {
+		font-size: 11px;
 	}
 }
